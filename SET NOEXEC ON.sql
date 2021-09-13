@@ -1,0 +1,31 @@
+DECLARE @dbVersion INT
+EXEC @dbVersion = dbo.DatabaseVersion
+
+IF @@ERROR <> 0
+	SET NOEXEC ON
+
+PRINT 'STEP 1'
+
+IF @@ERROR <> 0
+	SET NOEXEC ON
+
+PRINT 'STEP 2'
+EXEC ('SELECT * FROM CCompany')
+
+IF @@ERROR <> 0
+	SET NOEXEC ON
+
+PRINT 'STEP 3'
+
+IF @@ERROR <> 0
+	SET NOEXEC ON
+
+PRINT 'FINAL CHECK'
+DECLARE @Success AS BIT
+SET @Success = 1
+SET NOEXEC OFF
+
+IF @Success = 1
+	PRINT 'OK'
+ELSE
+	PRINT 'FAIL'
